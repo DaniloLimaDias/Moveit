@@ -11,11 +11,11 @@ interface Challenge {
 
 interface ChallengesContextData {
   level: number;
-  levelUp: number;
+  levelUp:() => void;
   currentExperience: number;
   experienceToNextLevel: number;
   activeChallenge: Challenge;
-  challengesCompleted: () => void;
+  challengesCompleted: number;
   startNewChallenge: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
@@ -105,11 +105,11 @@ export function ChallengesProvaider({ children,...rest }: ChallengesProvaiderPro
         level,
         levelUp,
         currentExperience,
-        challengesCompleted,
         experienceToNextLevel,
         activeChallenge,
         startNewChallenge,
         resetChallenge,
+        challengesCompleted,
         completeChallenge,
         closeLevelModal,
       }}
